@@ -23,7 +23,7 @@
   aria-labelledby={$labeledBy[panel.id]}
   class="svelte-tabs__tab-panel"
   role="tabpanel">
-  {#if $selectedPanel === panel}
+  <div hidden={$selectedPanel !== panel}>
     <slot></slot>
-  {/if}
+  </div>
 </div>

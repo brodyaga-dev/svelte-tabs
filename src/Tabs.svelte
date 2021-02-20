@@ -69,10 +69,10 @@
     }
   });
 
-  $: selectedTabIndex, ()=>{
-    selectedTab.set(tabs[selectedTabIndex]);
-    selectedPanel.set(panels[selectedTabIndex]);
-  };
+  $: ((index) => {
+    selectedTab.set(tabs[index]);
+    selectedPanel.set(panels[index]);
+  })(selectedTabIndex);
 
   async function handleKeyDown(event) {
     if (event.target.classList.contains('svelte-tabs__tab')) {
